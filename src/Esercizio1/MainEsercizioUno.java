@@ -1,6 +1,7 @@
 package Esercizio1;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainEsercizioUno{
@@ -35,6 +36,8 @@ public class MainEsercizioUno{
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("La posizione indicata non esiste. Indicare un numero da 1 a 5");
+            }catch (InputMismatchException e ){
+                System.out.println("Devi inserire un intero");
             }
 
         }

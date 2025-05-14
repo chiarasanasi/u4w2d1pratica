@@ -1,12 +1,25 @@
 package Esercizio1;
 
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class MainEsercizioCorretto {
 
+
+//    il logger deve essere di slf4j e deve avere un nome di solito come la classe
+    private static Logger logger = LoggerFactory.getLogger("MainEsercizioCorretto");
+
+
+
     public static void main(String[] args) {
+
         int[] numeri = new int[5];
 
         for (int i = 0; i < numeri.length; i++) {
@@ -38,10 +51,12 @@ public class MainEsercizioCorretto {
                     numeri[indice] = valore;
                 }
                 catch(ArrayIndexOutOfBoundsException e){
-                    System.out.println("Indice non esistente. L'array è formato da soli 5 elementi");
+//                    System.out.println("Indice non esistente. L'array è formato da soli 5 elementi");
+                    logger.error("Indice non esistente. L'array è formato da soli 5 elementi");
                 }
                 catch (InputMismatchException e){
-                    System.out.println("Input non valido, inserisci un numero");
+//                    System.out.println("Input non valido, inserisci un numero");
+                    logger.error("Input non valido, inserisci un numero");
                     scanner.nextLine();
                 }
 
